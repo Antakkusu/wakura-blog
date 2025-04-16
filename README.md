@@ -26,16 +26,3 @@ If it helps you learn something too, then mission complete.
 - 💭 Occasional thoughts on hacking, tech, or life
 
 ---
-
-## 🛠️ Setup (if blog is local or static)
-
-If you're running this as a static site (e.g., Jekyll, Hugo, etc.):
-
-```bash
-# clone the repo
-git clone https://github.com/yourusername/your-blog-name.git
-cd your-blog-name
-
-# if using Jekyll
-bundle install
-bundle exec jekyll serve
