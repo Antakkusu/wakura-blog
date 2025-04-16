@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⌈ About Me ⌋</title>
+  <link rel="icon" href="/favicon_64px.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #111;
+      color: #eee;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff5c5c;
+      margin-bottom: 20px;
+      animation: fadeInOut 3s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #888;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #444;
+      margin-top: 30px;
+    }
+
+    .about-btn {
+      margin-top: 40px;
+      padding: 10px 20px;
+      background-color: #ff5c5c;
+      color: #111;
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: monospace;
+      border-radius: 5px;
+    }
+
+    .about-btn:hover {
+      background-color: #ff3c3c;
+      text-shadow: 0 0 2px #ff5c5c;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    img.profile-img {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⌈ About Me ⌋</h1>
+
+    <img src="64356843.png" alt="Profile Picture" class="profile-img">
+
+    <p>Hey, I'm Wakura. I'm 18 years old, a digital wanderer, caught between code and noise, living in the void of the Internet.</p>
+    <p>I work in cybersecurity, pushing the limits of digital exploration every day, constantly training to improve my skills with the goal of becoming a cybersecurity engineer.</p>
+    <p>When I'm not immersed in bits and bytes, you can find me lost in the depths of music, video games, and the occasional philosophical musing on the absurdity of existence.</p>
+    <p>My passions revolve around knowledge, breaking barriers, and sometimes just staring into the endless expanse of the screen.</p>
+    
+
+    <p class="quote">"The only true wisdom is in knowing you know nothing." - Socrates</p>
+
+    <a href="index.html" class="about-btn">Return to the Void</a>
+  </div>
+</body>
+</html>

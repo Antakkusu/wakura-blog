@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⌈ Wired Login ⌋</title>
+  <link rel="icon" href="/favicon_64px.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #111;
+      color: #eee;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .frame-top, .frame-bottom {
+      font-size: 2rem;
+      animation: blink 1.2s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    h1 {
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    .ascii {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    .form-container {
+      margin-top: 30px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #333;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #ff5c5c;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: #ff3333;
+    }
+
+    .error {
+      color: #ff5c5c;
+      margin-top: 10px;
+    }
+
+    .nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .nav a:hover {
+      color: #ff5c5c;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    img.logo {
+      width: 100px;
+      margin: 20px 0;
+      filter: grayscale(100%) brightness(0.8);
+    }
+
+    .invisible {
+      margin-top: 20px;
+      color: #444;
+    }
+
+    .invisible a {
+      color: #777;
+      text-decoration: underline;
+    }
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+      font-family: monospace;
+    }
+
+    a:hover {
+      color: #ff5c5c;
+      text-shadow: 0 0 2px #ff5c5c;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .ascii {
+        font-size: 1.2rem;
+      }
+
+      .nav {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Frame Top -->
+    <div class="frame-top">ls -l |</div>
+
+    <!-- Title -->
+    <h1>
+      ⌈ wired <br>
+         login ⌋<br>
+    </h1>
+
+    <!-- ASCII Art -->
+    <div class="ascii">║▒░ ║▒░ ♫ ░▒║ ░▒║</div>
+
+    <!-- Login Form -->
+    <div class="form-container">
+      <form id="loginForm" onsubmit="return validateLogin()">
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+      </form>
+      <div class="error" id="errorMessage"></div>
+    </div>
+
+    <!-- Sad Link -->
+    <h6><a href="/sadtune.html">[make me sad]</a></h6>
+
+    <!-- Logo -->
+    <img class="logo" src="64356843.png" alt="logo">
+
+    <!-- Navigation Links -->
+    <div class="nav">
+      <a href="about.html">About Me</a> ︱
+      <a href="login.html">Wired/Login</a> ︱
+      <a href="help.html">Help</a> ︱
+      <a href="dir.html">Dir/etc</a> ︱
+      <a href="hardware.html">Hardware</a> ︱
+    </div>
+
+    <!-- Invisible Link Section -->
+    <div class="invisible">
+      You are invisible.<br>
+      <a href="index.html">[Go visible]</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Copyright © A.Wakura 2025</p>
+      <p><a href="mailto:wakura@protonmail.com">wakura@protonmail.com</a></p>
+      <div class="frame-bottom">⌊ ⌋</div>
+    </div>
+  </div>
+
+  <script>
+    // Simulated login validation
+    function validateLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      // For simplicity, let's assume these are the correct credentials
+      const correctUsername = 'admin';
+      const correctPassword = 'password123';
+
+      // Check if the credentials match
+      if (username === correctUsername && password === correctPassword) {
+        window.location.href = '/dashboard.html'; // Redirect to the dashboard or home page
+        return false;
+      } else {
+        errorMessage.textContent = 'Invalid username or password';
+        return false; // Prevent form submission to simulate login failure
+      }
+    }
+  </script>
+</body>
+</html>

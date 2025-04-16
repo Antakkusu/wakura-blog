@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <title>IP Address</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+  <div id="ipPageContent">
+    <h1>But Really Invisible?</h1>
+    <p id="ipAddress">Loading...</p>
+  </div>
+
+  <script>
+    // Fonction pour obtenir les paramètres de l'URL
+    function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Afficher l'IP récupérée dans l'élément "ipAddress"
+    window.onload = function() {
+      const userIP = getURLParameter('ip');
+      if (userIP) {
+        document.getElementById('ipAddress').textContent = userIP;
+      } else {
+        document.getElementById('ipAddress').textContent = '讓我們都愛萊恩';
+      }
+    };
+  </script>
+</body>
+</html>

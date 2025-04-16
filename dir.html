@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⌈ Dir/etc ⌋</title>
+  <link rel="icon" href="/favicon_64px.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #111;
+      color: #eee;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .frame-top, .frame-bottom {
+      font-size: 2rem;
+      animation: blink 1.2s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    h1 {
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    .ascii {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    .sad {
+      margin: 30px 0 50px;
+      font-style: italic;
+      color: #888;
+    }
+
+    .nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .nav a:hover {
+      color: #ff5c5c;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    img.logo {
+      width: 100px;
+      margin: 20px 0;
+      filter: grayscale(100%) brightness(0.8);
+    }
+
+    .dir-content {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .dir-content pre {
+      background-color: #222;
+      padding: 10px;
+      border-radius: 5px;
+      color: #77ff77;
+      font-family: "Courier New", monospace;
+      overflow-x: auto;
+    }
+
+    .dir-content code {
+      color: #ff5c5c;
+    }
+
+    .return-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #ccc;
+      border: 2px solid #ccc;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: monospace;
+    }
+
+    .return-btn:hover {
+      background-color: #ff5c5c;
+      color: #111;
+    }
+
+    .return-btn:active {
+      background-color: #ff3333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="frame-top">ls /etc |</div>
+
+    <h1>⌈ Dir/etc ⌋</h1>
+
+    <div class="ascii">║▒░ ║▒░ ♫ ░▒║ ░▒║</div>
+
+    <div class="dir-content">
+      <p>Listing of files in <code>/etc</code>: </p>
+
+      <pre>
+/etc/hostname
+/etc/fstab
+/etc/network
+/etc/hosts
+/etc/apt
+/etc/sudoers
+/etc/systemd
+/etc/init.d
+/etc/resolv.conf
+/etc/profile
+/etc/pacman.conf
+/etc/ssh
+/etc/xdg
+      </pre>
+
+      <p>Each directory and file listed here is a crucial part of the system configuration. Some of them contain configurations for networking, users, system services, and more. Explore and modify them only if you know what you're doing, or risk falling into the digital void.</p>
+      
+      <p>For more help, refer to <a href="help.html">Help</a>.</p>
+    </div>
+
+    <a href="index.html" class="return-btn">Return to the void</a>
+
+    <div class="footer">
+      <p>Copyright © A.Wakura 2025</p>
+      <p><a href="mailto:wakura@protonmail.com">wakura@protonmail.com</a></p>
+      <div class="frame-bottom">⌊ ⌋</div>
+    </div>
+  </div>
+</body>
+</html>

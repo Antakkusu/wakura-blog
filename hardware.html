@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hardware - Wired</title>
+  <link rel="icon" href="/favicon_64px.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #111;
+      color: #eee;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    .hardware-info {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .hardware-info span {
+      font-weight: bold;
+    }
+
+    .nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .nav a:hover {
+      color: #ff5c5c;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    img.logo {
+      width: 100px;
+      margin: 20px 0;
+      filter: grayscale(100%) brightness(0.8);
+    }
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+      font-family: monospace;
+    }
+
+    a:hover {
+      color: #ff5c5c;
+      text-shadow: 0 0 2px #ff5c5c;
+    }
+
+    .void-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff5c5c;
+      color: #fff;
+      text-decoration: none;
+      font-family: monospace;
+      border: 2px solid #ff5c5c;
+      transition: all 0.3s ease;
+    }
+
+    .void-btn:hover {
+      background-color: #fff;
+      color: #ff5c5c;
+      text-shadow: 0 0 2px #ff5c5c;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .hardware-info {
+        font-size: 1.1rem;
+      }
+
+      .nav {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Hardware Setup</h1>
+
+    <div class="hardware-info">
+      <p><span>Laptop:</span> ThinkPad T470</p>
+      <p><span>OS:</span> Arch Linux</p>
+      <p><span>Desktop Environments:</span> KDE Plasma, Hyprland</p>
+      <p><span>Graphics Card:</span> NVIDIA RTX 2060s</p>
+      <p><span>Processor:</span> AMD Ryzen 5 5600X3D</p>
+      <p><span>RAM:</span> 32GB</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav">
+      <a href="about.html">About Me</a> ︱
+      <a href="login.html">Wired/Login</a> ︱
+      <a href="help.html">Help</a> ︱
+      <a href="dir.html">Dir/etc</a> ︱
+      <a href="hardware.html">Hardware</a> ︱
+    </div>
+
+    <a href="index.html" class="void-btn">Return to the Void</a>
+
+    <div class="footer">
+      <p>Copyright © A.Wakura 2025</p>
+      <p><a href="mailto:wakura@protonmail.com">wakura@protonmail.com</a></p>
+    </div>
+  </div>
+</body>
+</html>
